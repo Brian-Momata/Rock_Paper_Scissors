@@ -12,26 +12,27 @@ function randomIndex() {
 }
 
 function playRound (playerSelection, computerSelection) {
+    let playerWins = 'Fantasitic! You win this round';
+    let computerWins = 'Oops! You lost this round';
+    let draw = `Draw! You both chose ${playerSelection}`;
     
     if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
-        return alert(`Draw! You both chose ${playerSelection}`);
+        return draw;
 
     }
     else if (playerSelection.toLowerCase() === 'rock' && computerSelection.toLowerCase() == 'scissors'){
-        return alert('Fantasitic! You win this round');
+        return playerWins;
 
     }
     else if (playerSelection.toLowerCase() === 'paper' && computerSelection.toLowerCase() == 'rock'){
-        return alert('Fantasitic! You win this round');
+        return playerWins;
 
     }
     else if (playerSelection.toLowerCase() === 'scissors' && computerSelection.toLowerCase() == 'paper'){
-        return alert('Fantasitic! You win this round');
+        return playerWins;
 
     } 
     else  { 
-        return alert('Oops! You lost this round');
+        return computerWins;
     }
 }
-
-
