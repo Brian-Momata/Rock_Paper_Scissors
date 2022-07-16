@@ -1,22 +1,29 @@
-console.log('Hello, World!');
-const choices = ['Rock','Paper','Scissors'];
+const choices = ['Rock','Paper','Scissors']; // An array of choices the player will pick
 
 function computerPlay() {
+// function picks a random index from the choices array:
   let result = choices[randomIndex()];
   return result;
 }
 
 function randomIndex() {
+    /* function decides how many items are in the choices array
+    and applies the .random() and .floor() method to randomly select an element */
+
     let index = Math.floor(Math.random() * choices.length);
     return index;
 }
 
 function playRound (playerSelection, computerSelection) {
+    /* compares the selection of the player with that of the computer
+    and returns a winner of the round.
+    */
 
     let playerWins = `Fantasitic! You win this round.\n${playerSelection} beats ${computerSelection} `;
     let computerWins = `Oops! You lost this round.\n${computerSelection} beats ${playerSelection}`;
     let draw = `Draw! You both chose ${playerSelection}`;
     
+
     if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
 
         return draw;
@@ -41,6 +48,9 @@ function playRound (playerSelection, computerSelection) {
 
 function game() {
 
+    /* Prompts the player to choose and object and plays 5 rounds
+    Updates score after every round and compares the final score to decide the winner  */
+
     let youWon = 'Congrats! You Beat the Computer';
     let youLost = 'Dang it! The Computer Won';
     let playerScore = 0;
@@ -55,7 +65,7 @@ function game() {
         let draw = `Draw! You both chose ${playerSelection}`;
         
         let result = playRound(playerSelection, computerSelection);
-        
+
         if (result == playerWins) {
             playerScore += 1;
         }
