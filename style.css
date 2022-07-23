@@ -1,0 +1,14 @@
+.body {
+    margin: 0;
+    background-color: darkslategrey;
+
+}
+.btn {
+    background-color: darkgrey;
+    border: none;
+    padding: 10px;
+    font-size: 34px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: darkslategray;
+}

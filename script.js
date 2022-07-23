@@ -58,7 +58,7 @@ function game() {
     
     for (let i = 0; i < 5; i++) {
 
-        const playerSelection = prompt('Choose between Rock, Paper and Scissors.');
+        const playerSelection = prom('Choose between Rock, Paper and Scissors.');
         const computerSelection = computerPlay();
         let playerWins = `Fantasitic! You win this round.\n${playerSelection} beats ${computerSelection} `;
         let computerWins = `Oops! You lost this round.\n${computerSelection} beats ${playerSelection}`;
