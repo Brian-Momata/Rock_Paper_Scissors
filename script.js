@@ -1,7 +1,3 @@
-let playerScore = 0;
-let compScore = 0;
-let count = 1;
-
 const choices = ['rock','paper','scissors'];
 
 function computerPlay() {
@@ -14,13 +10,19 @@ function randomIndex() {
     return index;
 }
 
-let roundResult = document.querySelector('#roundResult');
-let yourScore = document.querySelector('#playerscore');
-let computerScore = document.querySelector('#compscore');
-let gameStatus = document.querySelector('#gameStatus');
+let roundResult = document.querySelector('.roundResult');
+let yourScore = document.querySelector('.playerscore');
+let computerScore = document.querySelector('.compscore');
+let gameStatus = document.querySelector('.gameStatus');
+
+roundResult.textContent = 'CHOOSE YOUR WEAPON TO START';
+
+let playerScore = 0;
+let compScore = 0;
+let count = 1;
 
 function playRound (playerSelection, computerSelection) {
-    if (playerSelection === computerSelection) {
+   if (playerSelection === computerSelection) {
         
         roundResult.textContent = `Draw! You both chose ${computerSelection}`;
         yourScore.textContent = `Your Score:${playerScore}`;
@@ -67,13 +69,13 @@ const scissors = document.querySelector('#scissors');
 const resetButton = document.querySelector('.resetbutton');
 
 function resetGame() {
-    roundResult.textContent = '';
+    roundResult.textContent = 'CHOOSE YOUR WEAPON TO START';
     yourScore.textContent = '';
     computerScore.textContent = '';
     gameStatus.textContent = '';
     compScore = 0;
     playerScore = 0;
-    count = 0;
+    count = 1;
 }
 rock.addEventListener('click', function(){
     playRound('rock', computerPlay());

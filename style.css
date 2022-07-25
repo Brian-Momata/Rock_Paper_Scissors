@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'hermesregular';
+    src: url('./fonts/hermes-regular-webfont.woff2') format('woff2'),
+         url('./fonts/hermes-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 .body {
     margin: 0;
     background-color: darkslategrey;
@@ -8,26 +15,32 @@
     align-items: center;
 
 }
+.header {
+    font-family: 'hermesregular';
+    color: black;
+    font-size: 60px;
+    text-align: center;
+}
 .btn {
     background-color: darkgrey;
     border: none;
     padding: 10px;
-    font-size: 34px;
+    font-size: 50px;
     border-radius: 8px;
     cursor: pointer;
     color: darkslategray;
 }
 .displayResult {
-    border: 1px solid black;
-    margin-top: 50px;
+    border: none;
     flex: 1 1 auto;
-    width: 400px;
-    height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-items: center;
     color: darkgray;
+    padding: 10px;
+    font-size: 30px;
+    font-family: 'hermesregular';
 }
 .gameIcons {
     display: flex;
@@ -38,14 +51,15 @@
     background-color: darkgrey;
     border: none;
     padding: 10px;
-    font-size: 16px;
+    font-size: 25px;
     border-radius: 8px;
     cursor: pointer;
     color: darkslategray;
+    font-family: 'hermesregular';
 }
 .startButtons {
     margin-top: 16px;
 }
 button > * {
     pointer-events: none;
-  }
+}
