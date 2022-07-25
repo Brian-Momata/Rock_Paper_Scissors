@@ -1,6 +1,11 @@
 .body {
     margin: 0;
     background-color: darkslategrey;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
 
 }
 .btn {
@@ -12,3 +17,35 @@
     cursor: pointer;
     color: darkslategray;
 }
+.displayResult {
+    border: 1px solid black;
+    margin-top: 50px;
+    flex: 1 1 auto;
+    width: 400px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    color: darkgray;
+}
+.gameIcons {
+    display: flex;
+    flex: 1;
+    gap: 24px;
+}
+.resetbutton {
+    background-color: darkgrey;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: darkslategray;
+}
+.startButtons {
+    margin-top: 16px;
+}
+button > * {
+    pointer-events: none;
+  }

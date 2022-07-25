@@ -5,15 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors Game</title>
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
     <script src="https://kit.fontawesome.com/54a2cd0953.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body class="body">
+    <div class="displayResult">
+    <p id="roundResult"></p>
+    <p id="playerscore"></p>
+    <p id="compscore"></p>
+    <p id="gameStatus"></p>
+    </div>
     <div class="gameIcons">
-        <button class="btn"><i class="fa fa-hand-back-fist"></i></button>
-        <button class="btn"><i class="fa fa-hand"></i></button>
-        <button class="btn"><i class="fa fa-hand-scissors"></i></button>
+        <button class="btn" id="rock"><i class="fa fa-hand-back-fist"></i></button>
+        <button class="btn" id="paper"><i class="fa fa-hand"></i></button>
+        <button class="btn" id="scissors"><i class="fa fa-hand-scissors"></i></button>
+    </div>
+    <div class="startButtons">
+        <button class="resetbutton">Reset</button>
     </div>
 </body>
 </html>
