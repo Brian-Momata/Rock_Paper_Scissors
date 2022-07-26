@@ -85,14 +85,22 @@ function resetGame() {
     count = 1;
     gameOver = false;
 }
+function playSound(e) {
+    let audio = document.querySelector(`audio[class="${e}"]`);
+    audio.currentTime = 0;
+    audio.play();
+}
 rock.addEventListener('click', function(){
     playRound('rock', computerPlay());
+    playSound('rockAudio');
 });
 paper.addEventListener('click', function(){
     playRound('paper', computerPlay());
+    playSound('paperAudio');
 });
 scissors.addEventListener('click', function(){
     playRound('scissors', computerPlay());
+    playSound('scissorsAudio');
 });
 
 resetButton.addEventListener('click', function(){
