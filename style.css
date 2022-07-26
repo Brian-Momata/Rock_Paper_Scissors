@@ -17,9 +17,11 @@
 }
 .header {
     font-family: 'hermesregular';
-    color: black;
+    color: rgb(192, 42, 42);
     font-size: 60px;
     text-align: center;
+    margin-bottom: auto;
+    margin-top: -10px;
 }
 .btn {
     background-color: darkgrey;
@@ -28,7 +30,7 @@
     font-size: 50px;
     border-radius: 8px;
     cursor: pointer;
-    color: darkslategray;
+    color: rgb(192, 42, 42);
 }
 .displayResult {
     border: none;
@@ -42,6 +44,12 @@
     font-size: 30px;
     font-family: 'hermesregular';
 }
+.gameStatus {
+    color: darkgray;
+    font-size: 50px;
+    font-family: 'hermesregular';
+    text-align: center;
+}
 .gameIcons {
     display: flex;
     flex: 1;
@@ -54,11 +62,11 @@
     font-size: 25px;
     border-radius: 8px;
     cursor: pointer;
-    color: darkslategray;
+    color: rgb(192, 42, 42);
     font-family: 'hermesregular';
 }
 .startButtons {
-    margin-top: 16px;
+    margin: 10px;
 }
 button > * {
     pointer-events: none;

@@ -20,46 +20,53 @@ roundResult.textContent = 'CHOOSE YOUR WEAPON TO START';
 let playerScore = 0;
 let compScore = 0;
 let count = 1;
+let gameOver = false;
 
 function playRound (playerSelection, computerSelection) {
-   if (playerSelection === computerSelection) {
+
+    if (!gameOver){
+        if (playerSelection === computerSelection) {
         
-        roundResult.textContent = `Draw! You both chose ${computerSelection}`;
-        yourScore.textContent = `Your Score:${playerScore}`;
-        computerScore.textContent = `Computer Score:${compScore}`;
-        gameStatus.textContent = `Round:${count}`;
+            roundResult.textContent = `Draw! You both chose ${computerSelection}`;
+            yourScore.textContent = `Your Score:${playerScore}`;
+            computerScore.textContent = `Computer Score:${compScore}`;
+            gameStatus.textContent = `Round ${count} Result`;
+        }
+        else if (playerSelection === 'rock' && computerSelection == 'scissors'){
+            playerScore += 1;
+            roundResult.textContent = `Fantastic! ${playerSelection} beats ${computerSelection}`;
+            yourScore.textContent = `Your Score:${playerScore}`;
+            computerScore.textContent = `Computer Score:${compScore}`;
+            gameStatus.textContent = `Round ${count} Result`;
+        }
+        else if (playerSelection === 'paper' && computerSelection == 'rock'){
+            playerScore += 1;
+            roundResult.textContent = `Fantastic! ${playerSelection} beats ${computerSelection}`;
+            yourScore.textContent = `Your Score:${playerScore}`;
+            computerScore.textContent = `Computer Score:${compScore}`;
+            gameStatus.textContent = `Round ${count} Result`;
+        }
+        else if (playerSelection === 'scissors' && computerSelection == 'paper'){
+            playerScore += 1;
+            roundResult.textContent = `Fantastic! ${playerSelection} beats ${computerSelection}`;
+            yourScore.textContent = `Your Score:${playerScore}`;
+            computerScore.textContent = `Computer Score:${compScore}`;
+            gameStatus.textContent = `Round ${count} Result`;
+        } 
+        else  { 
+            compScore += 1;
+            roundResult.textContent = `Oops! ${computerSelection} beats ${playerSelection}`;
+            yourScore.textContent = `Your Score:${playerScore}`;
+            computerScore.textContent = `Computer Score:${compScore}`;
+            gameStatus.textContent = `Round ${count} Result`;
+        }
+        count++;
+            if (count > 5) {
+                gameStatus.textContent = playerScore > compScore ? 'CONGRATS!\nYOU BANISHED THE COMPUTER!': 'SO UNFORTUNATE!\nTHE COMPUTER OVERPOWERED YOU';
+                gameOver = true;
     }
-    else if (playerSelection === 'rock' && computerSelection == 'scissors'){
-        playerScore += 1;
-        roundResult.textContent = `Fantastic! ${playerSelection} beats ${computerSelection}`;
-        yourScore.textContent = `Your Score:${playerScore}`;
-        computerScore.textContent = `Computer Score:${compScore}`;
-        gameStatus.textContent = `Round: ${count}`;
-    }
-    else if (playerSelection === 'paper' && computerSelection == 'rock'){
-        playerScore += 1;
-        roundResult.textContent = `Fantastic! ${playerSelection} beats ${computerSelection}`;
-        yourScore.textContent = `Your Score:${playerScore}`;
-        computerScore.textContent = `Computer Score:${compScore}`;
-        gameStatus.textContent = `Round: ${count}`;
-    }
-    else if (playerSelection === 'scissors' && computerSelection == 'paper'){
-        playerScore += 1;
-        roundResult.textContent = `Fantastic! ${playerSelection} beats ${computerSelection}`;
-        yourScore.textContent = `Your Score:${playerScore}`;
-        computerScore.textContent = `Computer Score:${compScore}`;
-        gameStatus.textContent = `Round: ${count}`;
-    } 
-    else  { 
-        compScore += 1;
-        roundResult.textContent = `Oops! ${computerSelection} beats ${playerSelection}`;
-        yourScore.textContent = `Your Score:${playerScore}`;
-        computerScore.textContent = `Computer Score:${compScore}`;
-        gameStatus.textContent = `Round: ${count}`;
-    }
-    count++;
-    if (count > 5) {
-        gameStatus.textContent = playerScore > compScore ? 'AWESOME! You Won': 'Dang it! The computer won';
+    } else {
+    return;
     }
 }
 
@@ -76,6 +83,7 @@ function resetGame() {
     compScore = 0;
     playerScore = 0;
     count = 1;
+    gameOver = false;
 }
 rock.addEventListener('click', function(){
     playRound('rock', computerPlay());
